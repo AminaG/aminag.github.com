@@ -13,7 +13,7 @@ i=Image;
     return y
   }
   document.a=document.appendChild
-  document.createElement=function(){
+  document.appendChild=function(){
     var y= document.a.apply(document,arguments)
     console.log('appendChild',arguments,y,new Error().stack)
     return y
