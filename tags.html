@@ -9,13 +9,17 @@ i=Image;
   document.c=document.createElement
   document.createElement=function(){
     var y=document.c.apply(document,arguments)
+    console.groupCollapsed('createElement',arguments)
     console.log('createElement',arguments,y,new Error().stack)
+    console.groupEnd();
     return y
   }
   document.a=document.appendChild
   document.appendChild=function(){
+    console.groupCollapsed('appendChild',arguments)
     var y= document.a.apply(document,arguments)
     console.log('appendChild',arguments,y,new Error().stack)
+    console.groupEnd();
     return y
   }
 </script>
