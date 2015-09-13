@@ -8,13 +8,15 @@ i=Image;
   }
   document.c=document.createElement
   document.createElement=function(){
-    console.log('createElement',arguments)
-    return document.c.apply(document,arguments)
+    var y=document.c.apply(document,arguments)
+    console.log('createElement',arguments,y,new Error().stack)
+    return y
   }
   document.a=document.appendChild
   document.createElement=function(){
-    console.log('appendChild',arguments)
-    return document.a.apply(document,arguments)
+    var y= document.a.apply(document,arguments)
+    console.log('appendChild',arguments,y,new Error().stack)
+    return y
   }
 </script>
 
