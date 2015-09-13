@@ -6,8 +6,15 @@ i=Image;
     console.log('New Image')
     return i.apply(null,arguments);  
   }
+  document.c=document.createElement
   document.createElement=function(){
-    console.log('createElement')
+    console.log('createElement',arguments)
+    return document.c.apply(document,arguments)
+  }
+  document.a=document.appendChild
+  document.createElement=function(){
+    console.log('appendChild',arguments)
+    return document.c.apply(document,arguments)
   }
 </script>
 
