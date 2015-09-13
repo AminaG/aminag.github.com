@@ -1,3 +1,11 @@
+<script>
+i=Image;
+  Image=function(){
+    console.log('New Image')
+    return i.apply(null,arguments);  
+  }
+</script>
+
 <!-- Google Tag Manager -->
 <noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-NNPVQN"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
