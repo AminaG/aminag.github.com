@@ -2,6 +2,7 @@
   <head>
 <script>
 i=Image;
+var mm=new Date();
   Image=function(){
     console.log('New Image')
     return i.apply(null,arguments);  
@@ -9,14 +10,14 @@ i=Image;
   document.c=document.createElement
   document.createElement=function(){
     var y=document.c.apply(document,arguments)
-    console.groupCollapsed('createElement',arguments)
+    console.groupCollapsed('createElement',arguments,new Date().valueOf()-mm.valueOf(), ' ms')
     console.log('createElement',arguments,y,new Error().stack)
     console.groupEnd();
     return y
   }
   document.a=document.appendChild
   document.appendChild=function(){
-    console.groupCollapsed('appendChild',arguments)
+    console.groupCollapsed('appendChild',arguments,new Date().valueOf()-mm.valueOf(), ' ms')
     var y= document.a.apply(document,arguments)
     console.log('appendChild',arguments,y,new Error().stack)
     console.groupEnd();
