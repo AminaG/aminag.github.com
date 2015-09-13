@@ -4,6 +4,9 @@ i=Image;
     console.log('New Image')
     return i.apply(null,arguments);  
   }
+  document.createElement=function(){
+    console.log('createElement')
+  }
 </script>
 
 <!-- Google Tag Manager -->
